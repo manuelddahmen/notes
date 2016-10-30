@@ -1,0 +1,7 @@
+/private.php
+/vendor
+/node_modules
+Homestead.yaml
+.env
+
+.idea/*
