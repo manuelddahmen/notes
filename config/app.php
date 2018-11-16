@@ -4,22 +4,22 @@ return [
     /**
      * Path to the 'app' folder
      */
-    'app.path' => "c:\\www\\note\\app",
+    'app.path' => "c:\\www\\notes\\app",
     /**
      * Path to the project's root folder
      */
-    'base_path' => 'c:\\www\\note',
+    'base_path' => 'c:\\www\\notes',
     /**
      * Path to the 'public' folder
      */
-    'public_path' => 'c:\\www\\note',
+    'public_path' => 'c:\\www\\notes',
     /**
      * Path to the 'app/storage' folder
      */
-    'storage_path' => 'c:\\www\\note\\storage',
+    'storage_path' => 'c:\\www\\notes\\storage',
 
     'hostname' => 'localhost/note/',
-    'app.pathToRootDir' => 'c:/www/note/',
+    'app.pathToRootDir' => 'c:/www/notes/',
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode
