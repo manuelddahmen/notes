@@ -1,25 +1,12 @@
 <application>
   <component name="WebServers">
-    <sftpAdvancedGlobalOptions>
-      <SftpAdvancedOptions hostKeyCheckingLevel="NO">
-        <option name="hostKeyCheckingLevel" value="NO" />
-      </SftpAdvancedOptions>
-    </sftpAdvancedGlobalOptions>
     <option name="servers">
-      <webServer id="2f8323fb-f5a1-43fa-aa12-34c7a05914cf" name="demoniakmachine.com" url="http://ssh.demoniakmachine.com">
-        <fileTransfer host="ssh.demoniakmachine.com" port="22" rootFolder="/customers/4/5/5/demoniakmachine.com/httpd.www" accessType="SFTP">
+      <webServer id="218388a8-2a4c-445b-acd2-78d7cd17b352" name="manudahmen.be" url="http://manudahmen.be">
+        <fileTransfer host="ftp.manudahmen.be" port="21" username="manudahmen.be">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
-          <option name="port" value="22" />
-        </fileTransfer>
-      </webServer>
-      <webServer id="cd36f079-8b3f-461e-b4de-6a0352e25dd6" name="ftp.manudahmen.be" url="http://ftp.manudahmen.be">
-        <fileTransfer host="ftp.manudahmen.be" port="22" rootFolder="/customers/3/5/2/manudahmen.be/httpd.www" accessType="SFTP">
-          <advancedOptions>
-            <advancedOptions compatibilityMode="true" controlEncoding="" dataProtectionLevel="Private" passiveMode="true" />
-          </advancedOptions>
-          <option name="port" value="22" />
+          <option name="port" value="21" />
         </fileTransfer>
       </webServer>
     </option>

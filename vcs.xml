@@ -7,15 +7,11 @@
           <option name="userName" value="" />
         </UrlAndUserName>
         <UrlAndUserName>
-          <option name="url" value="https://github.com/Frug/AJAX-Chat.git" />
-          <option name="userName" value="" />
-        </UrlAndUserName>
-        <UrlAndUserName>
-          <option name="url" value="https://github.com/AligatorQueries/LaravelForMamen.git" />
-          <option name="userName" value="" />
+          <option name="url" value="http://gitlab.com" />
+          <option name="userName" value="mdahmen" />
         </UrlAndUserName>
       </list>
     </option>
-    <option name="cloneParentDir" value="c:\www" />
+    <option name="cloneParentDir" value="C:\Users\mary\PhpstormProjects" />
   </component>
 </application>
