@@ -1,6 +1,14 @@
 <application>
   <component name="WebServers">
     <option name="servers">
+      <webServer id="63d7ba91-5af9-4190-ae9c-f31f9ea0aa7f" name="demoniakmachine.com" url="http://ssh.demoniakmachine.com">
+        <fileTransfer host="ssh.demoniakmachine.com" port="22" rootFolder="/customers/4/5/5/demoniakmachine.com/httpd.www" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
       <webServer id="218388a8-2a4c-445b-acd2-78d7cd17b352" name="manudahmen.be" url="http://manudahmen.be">
         <fileTransfer host="ftp.manudahmen.be" port="21" username="manudahmen.be">
           <advancedOptions>
