@@ -4,22 +4,22 @@ return [
     /**
      * Path to the 'app' folder
      */
-    'app.path' => "c:\\www\\notes\\app",
+    'app.path' => "/customers/4/5/5/demoniakmachine.com/httpd.www/notes/app",// /customers/4/5/5/demoniakmachine.com/httpd.www/notes
     /**
      * Path to the project's root folder
      */
-    'base_path' => 'c:\\www\\notes',
+    'base_path' => '/customers/4/5/5/demoniakmachine.com/httpd.www/notes',// /customers/4/5/5/demoniakmachine.com/httpd.www/notes
     /**
      * Path to the 'public' folder
      */
-    'public_path' => 'c:\\www\\notes',
+    'public_path' => '/customers/4/5/5/demoniakmachine.com/httpd.www/notes',// /customers/4/5/5/demoniakmachine.com/httpd.www/notes
     /**
      * Path to the 'app/storage' folder
      */
-    'storage_path' => 'c:\\www\\notes\\storage',
+    'storage_path' => '/customers/4/5/5/demoniakmachine.com/httpd.www/notes/storage',// /customers/4/5/5/demoniakmachine.com/httpd.www/notes
 
-    'hostname' => 'localhost/note/',
-    'app.pathToRootDir' => 'c:/www/notes/',
+    'hostname' => 'demoniakmachine.com/notes/',// demoniakmachine.com
+    'app.pathToRootDir' => '/customers/4/5/5/demoniakmachine.com/httpd.www/notes',//  /customers/4/5/5/demoniakmachine.com/httpd.www/notes
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode
@@ -45,8 +45,7 @@ return [
     |
     */
 
-    'url' => "/note",
-
+    'url' => "/notes",
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
@@ -97,7 +96,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY', '12345678901234567890123456789012'),
+    'key' => env('APP_KEY', 'QVTqwDEdLrxrMoS85e8TWpgd1FcIHzXrZzW4Ircu88c='),
 
     'cipher' => 'AES-256-CBC',
 
@@ -132,13 +131,12 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
-//        Illuminate\Foundation\Providers\ArtisanServiceProvider::class,
+        Illuminate\Foundation\Providers\ArtisanServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
         Illuminate\Cache\CacheServiceProvider::class,
         Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
-//        Illuminate\Routing\ControllerServiceProvider::class,
         Illuminate\Cookie\CookieServiceProvider::class,
         Illuminate\Database\DatabaseServiceProvider::class,
         Illuminate\Encryption\EncryptionServiceProvider::class,

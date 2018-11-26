@@ -399,15 +399,16 @@ Route::get("file/download/{noteId}", [
 	}]);
 
 
-function echoImgSelf($content, $filename)
+function printImgSelf($content, $filename)
 {
 	header('Content-type:image/' . getExtension($filename));
+
 
 
 	echo $content;
 }
 
-function ImgSelf($content, $filename)
+function imgSelf($content, $filename)
 {
 	return 'image/' . getExtension($filename);
 
@@ -682,6 +683,10 @@ Route::match(['get', 'post'], "user/contacts", ["middleware" => "auth",
 ]);
 
 Route::get("ft", "\\App\\BlokNot\\FiletypeController@index");
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

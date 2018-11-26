@@ -134,7 +134,7 @@ class AuthController extends Controller
     {
         if (Auth::attempt(['email' => $this->email, 'password' => $this->password])) {
             // Authentication passed...
-            return redirect()->intended('dashboard');
+            return redirect()->intended('list/0/1');
         }
     }
 
@@ -169,6 +169,8 @@ class AuthController extends Controller
         if ($res != NULL) {
             ExtraRegisterOperations::createRootFolder($data["email"]);
             ExtraRegisterOperations::sendRegisteredUserEmail($data["email"]);
+
+            //$res->save();
         }
         return $res;
 
