@@ -11,7 +11,6 @@
 */
 require_once(base_path()."/main_functions.php");
 
-require_once("routes.site-2.0.php");
 
 Route::get("/", ["as" => "root", "uses" => function () {
 		return view("home");
@@ -683,10 +682,6 @@ Route::match(['get', 'post'], "user/contacts", ["middleware" => "auth",
 ]);
 
 Route::get("ft", "\\App\\BlokNot\\FiletypeController@index");
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('wordpress/page/{page}', [function($page){return view("wp/wordpress_page")->with("page", $page);}]);
+Route::get('wordpress/id/{id}', [function($id){return view("wp/wordpress_id")->with("id", $id);}]);

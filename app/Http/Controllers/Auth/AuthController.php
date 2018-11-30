@@ -108,19 +108,21 @@ class AuthController extends Controller
 	 */
 	public function postLogin(Request $request)
 	{
-		$login = $this->login($request);
+		if($login = $this->attemptLogin($request)!=NULL) {
 
-		$email = $request->email;
-		$user = \Auth::user();
 
-		if(($user->username)!= NULL)
-		{
-			redirect('home');
+			$email = $request->email;
+			$user  = \Auth::user();
+
+			if(($user->username)!= NULL)
+			{
+				redirect('home');
+			}
 		}
 
 		else
 		{
-			redirect('/error-login');
+			redirect('auth/login');
 		}
 
 		return $login;
