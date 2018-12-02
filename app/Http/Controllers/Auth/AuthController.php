@@ -29,6 +29,13 @@ class AuthController extends Controller
 		AuthenticatesUsers::redirectPath insteadof RegistersUsers;
 		AuthenticatesUsers::guard insteadof RegistersUsers;
 	}
+
+	protected function redirectTo()
+
+    {
+        return asset('auth/checkregistered');
+    }
+
     /**
      * Create a new authentication controller instance.
      *
@@ -37,6 +44,7 @@ class AuthController extends Controller
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'getLogout']);
+        $this->redirectPath = asset('auth/checkregistered');
     }
 	public function postRegister(Request $request)
 	{
@@ -56,6 +64,7 @@ class AuthController extends Controller
 	public function throwValidationException(Request $request, $validator)
 	{
 		echo "Erreur lors de l'enregistrement de l'utilisateur";
+		$this->redirectPath = asset('auth/checkregistered');
 	}
 
     public function remoteLogin($id, $hach)
@@ -122,7 +131,7 @@ class AuthController extends Controller
 
 		else
 		{
-			redirect('auth/login');
+			redirect('auth/checkregistered');
 		}
 
 		return $login;

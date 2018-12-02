@@ -117,7 +117,7 @@ Route::get("note/list/{noteId}/{page}", [
 		}
 		$ser = App\Note::toXMLString(\App\Note::getFolder($noteId, $filtre));
 
-		return View::make("note/list", ["noteId" => $noteId, "page" => $page, "serialized_data" => $ser, "filtre" => $filtre]);
+		return view("note/list", ["noteId" => $noteId, "page" => $page, "serialized_data" => $ser, "filtre" => $filtre]);
 	}
 ])->middleware("auth");
 Route::post("note/sharing/{noteId}",
@@ -685,3 +685,9 @@ Route::get("ft", "\\App\\BlokNot\\FiletypeController@index");
 
 Route::get('wordpress/page/{page}', [function($page){return view("wp/wordpress_page")->with("page", $page);}]);
 Route::get('wordpress/id/{id}', [function($id){return view("wp/wordpress_id")->with("id", $id);}]);
+
+Route::post('auth/checkregistered', [
+    function(){
+        return view("auth/checkregistered");
+    }]
+);

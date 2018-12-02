@@ -2,7 +2,7 @@
 
 @section('content')
     <h2>Register</h2>
-    <form method="POST" action="{{ asset('auth/register') }}">
+    <form method="POST" action="{{ asset('auth/checkregistered') }}">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="name">Name:</label>
@@ -22,6 +22,5 @@
         <div class="form-group">
             <button style="cursor:pointer" type="submit" class="btn btn-primary">Submit</button>
         </div>
-        @include('partials.formerrors')
     </form>
 @endsection
