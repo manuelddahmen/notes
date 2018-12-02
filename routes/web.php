@@ -43,9 +43,9 @@ Route::post('post_images', function () {
 });
 
 
-Route::get('auth/register', ["as" => "register", "uses" =>
+Route::get('auth/register', ["as" => "signup", "uses" =>
 	function() {
-		return view('auth\register');
+		return view('auth/register');
 	}]);
 Route::post('auth/register', ['as' => 'register_submit', 'uses' => 'Auth\AuthController@postRegister']);
 
@@ -106,7 +106,7 @@ Route::get("freezer", ["as" => "freezer", "uses" => function () {
 }]);
 
 Route::get("note/list/{noteId}/{page}", [
-	'middleware' => "auth",
+	'middleware' => 'auth',
 	'uses' => function ($noteId = 0, $page = 1) {
 		if (!isset($noteId) || ($noteId == 0)) {
 			$noteId = getRootForUser();
@@ -119,7 +119,7 @@ Route::get("note/list/{noteId}/{page}", [
 
 		return View::make("note/list", ["noteId" => $noteId, "page" => $page, "serialized_data" => $ser, "filtre" => $filtre]);
 	}
-]);
+])->middleware("auth");
 Route::post("note/sharing/{noteId}",
 	[
 		'before' => 'csrf',

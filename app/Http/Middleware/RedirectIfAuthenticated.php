@@ -20,6 +20,8 @@ class RedirectIfAuthenticated
         if (Auth::guard($guard)->check()) {
             return redirect('/note/0/1');
         }
+        else
+            return redirect('auth/login');
 
         return $next($request);
     }
