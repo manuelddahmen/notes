@@ -46,20 +46,6 @@ class AuthController extends Controller
         $this->middleware('guest', ['except' => 'getLogout']);
         $this->redirectPath = asset('auth/checkregistered');
     }
-	public function postRegister(Request $request)
-	{
-		$validator = $this->validator($request->all());
-
-		if ($validator->fails()) {
-			$this->throwValidationException(
-				$request, $validator
-			);
-		}
-
-		$this->create($request->all());
-
-		return redirect($this->redirectPath());
-	}
 
 	public function throwValidationException(Request $request, $validator)
 	{

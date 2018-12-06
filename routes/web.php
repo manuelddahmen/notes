@@ -38,6 +38,16 @@ Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 
+Route::post('auth/checkregistered', [
+        function(){
+            return view("auth/checkregistered");
+        }]
+);
+Route::get('auth/checkregistered', [
+        function(){
+            return view("auth/checkregistered");
+        }]
+);
 Route::post('post_images', function () {
 	require_once("../app_tinymce_file_acceptor.php");
 });
@@ -119,7 +129,8 @@ Route::get("note/list/{noteId}/{page}", [
 
 		return view("note/list", ["noteId" => $noteId, "page" => $page, "serialized_data" => $ser, "filtre" => $filtre]);
 	}
-])->middleware("auth");
+]);
+
 Route::post("note/sharing/{noteId}",
 	[
 		'before' => 'csrf',
@@ -685,9 +696,3 @@ Route::get("ft", "\\App\\BlokNot\\FiletypeController@index");
 
 Route::get('wordpress/page/{page}', [function($page){return view("wp/wordpress_page")->with("page", $page);}]);
 Route::get('wordpress/id/{id}', [function($id){return view("wp/wordpress_id")->with("id", $id);}]);
-
-Route::post('auth/checkregistered', [
-    function(){
-        return view("auth/checkregistered");
-    }]
-);
