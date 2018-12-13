@@ -41,11 +41,11 @@ function getDocRow($noteId)
     }
 }
 
-function getDocuments()
+function getDocuments($username)
 {
 
     global $mysqli;
-    $username = mysqli_escape_string($mysqli, Auth::user()->email);
+    $username = mysqli_escape_string($mysqli, $username );
     $res = simpleQ($mysqli, "select * from bn2_filesdata where username=".$username.
         " inner join bn2_share on username=(select username from bn2_users where id=bn2_share.givee)" );
     $i = 0;
@@ -419,7 +419,7 @@ function connect() {
     }
 
 
-    echo 'Successs... ' . $mysqli->host_info . "\n";
+    //echo 'Successs... ' . $mysqli->host_info . "\n";
 }
 function deleteNote($noteId)
 {

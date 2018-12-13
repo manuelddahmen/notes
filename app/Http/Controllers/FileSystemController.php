@@ -1,16 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 
 Class FileSystemController extends Controller
 {
     private $rootPath = "datafiles";
-    private $user_id;
+    private $username;
 
     public function __construct()
     {
-        $this->user_id = Auth::user()->id;
+    	if(Auth::user()!=NULL) {
+		    $this->username = Auth::user()->username;
+	    }
     }
 
     /**methods:

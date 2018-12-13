@@ -48,10 +48,11 @@ Route::get('auth/checkregistered', [
             return view("auth/checkregistered");
         }]
 );
+/*
 Route::post('post_images', function () {
 	require_once("../app_tinymce_file_acceptor.php");
 });
-
+*/
 
 Route::get('auth/register', ["as" => "signup", "uses" =>
 	function() {
@@ -692,7 +693,7 @@ Route::match(['get', 'post'], "user/contacts", ["middleware" => "auth",
                                                 }
 ]);
 
-Route::get("ft", "\\App\\BlokNot\\FiletypeController@index");
+Route::get("ft", "\\App\\Http\\Controllers\\FiletypeController@index");
 
 Route::get('wordpress/page/{page}', [function($page){return view("wp/wordpress_page")->with("page", $page);}]);
 Route::get('wordpress/id/{id}', [function($id){return view("wp/wordpress_id")->with("id", $id);}]);

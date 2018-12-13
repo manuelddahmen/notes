@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Win
- * Date: 10-01-16
- * Time: 20:57
- */
 
-namespace App\Http\Browser;
+namespace App\Http\Controllers;
 
 
 use App\Http\Controllers\Controller;

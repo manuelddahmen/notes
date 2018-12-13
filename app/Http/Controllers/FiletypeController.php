@@ -5,14 +5,24 @@
  * Date: 27-03-17
  * Time: 10:23
  */
-namespace \App\BlokNot;
-class FiletypeController extends \App\Http\Controllers\Controller
+namespace App\Http\Controllers;
+
+use Illuminate\Support\Facades\Auth
+
+
+;
+class FiletypeController extends Controller
 {
     private $list;
     function __construct()
     {
-        $this->list = getDocuments();
-
+    	if(Auth::user()!=NULL) {
+		    $this->list = getDocuments( Auth::user()->email );
+	    }
+	    else
+	    {
+	    	echo("FyletypeController construct()");
+	    }
     }
     function owner($owner)
     {
