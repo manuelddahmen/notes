@@ -49,9 +49,7 @@
 <div id="footer">
     @yield("footer.master")
     <div id="api"></div>
-    <!-- place in header of your html document -->
-    <a href="https://mixpanel.com/f/partner" rel="nofollow"><img
-                src="http://cdn.mxpnl.com/site_media/images/partner/badge_light.png" alt="Mobile Analytics"/></a>
+
 </div>
 </body>
 </html>

@@ -34,6 +34,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'logout']);
+	    $this->redirectTo = asset('note/list/0/1');
+	    $this->middleware('guest', ['except' => 'logout']);
     }
 }
