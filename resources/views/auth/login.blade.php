@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ asset('auth/login') }}">
+                    <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -57,15 +57,8 @@
                                     {{ __('Login') }}
                                 </button>
 
-                                <a class="btn btn-link" href="{{ asset('password.request') }}">
+                                <a class="btn btn-link" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
-                                </a>
-                            </div>
-                        </div>
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                               <a class="btn btn-link" href="{{ asset('auth/register') }}">
-                                    {{ __('Register') }}
                                 </a>
                             </div>
                         </div>
