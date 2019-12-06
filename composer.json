@@ -10,7 +10,7 @@
     "require": {
         "php": ">=5.6.4",
         "laravel/framework": "5.7.9",
-        "jgrossi/corcel": "2.7"
+        "jgrossi/corcel": "2.7",
         'symfony/http-foundation" : "4.4.1"
     },
     "require-dev": {
