@@ -33,7 +33,7 @@ function getSharedDocument($id, $user = NULL)
 function getDocRow($noteId)
 {
     global $mysqli;
-    $res = simpleQ($mysqli, "select * from bn2_filesdata where isDeleted=0 and id=" . ((int)$noteId));
+    $res = simpleQ($mysqli, "select * from filesdata where isDeleted=0 and id=" . ((int)$noteId));
     if ($res != NULL) {
         return mysqli_fetch_assoc($res);
     } else {
@@ -46,8 +46,8 @@ function getDocuments($username)
 
     global $mysqli;
     $username = mysqli_escape_string($mysqli, $username );
-    $res = simpleQ($mysqli, "select * from bn2_filesdata where username=".$username.
-        " inner join bn2_share on username=(select username from bn2_users where id=bn2_share.givee)" );
+    $res = simpleQ($mysqli, "select * from filesdata where username=".$username.
+        " inner join share on username=(select username from users where id=share.givee)" );
     $i = 0;
     if ($res != NULL) {
         while ($res!=NULL)
@@ -61,7 +61,7 @@ function getDocuments($username)
 function getShareRow($noteId)
 {
     global $mysqli;
-    $res = simpleQ("select * from bn2_share where id=" . ((int)$noteId), $mysqli);
+    $res = simpleQ("select * from share where id=" . ((int)$noteId), $mysqli);
     if ($res != NULL) {
         return mysqli_fetch_assoc($res);
     } else {
@@ -74,7 +74,7 @@ function getField($row, $fieldName)
 }
 function getFolderList($user) {
     global $mysqli;
-    $sql = "select * from bn2_filesdata where isDirectory=1 and isDeleted=0 and username='" . mysqli_real_escape_string($mysqli, $user) . "'";
+    $sql = "select * from filesdata where isDirectory=1 and isDeleted=0 and username='" . mysqli_real_escape_string($mysqli, $user) . "'";
     $res = simpleQ($mysqli, $sql);
     return $res;
 }
@@ -169,7 +169,7 @@ function listerNotesFromDB($filtre, $composed, $path, $user)
 function listerNotes_browser($user)
 {
     global $mysqli;
-    $results = mysqli_query($mysqli, "select * from bn2_filesdata where isDeleted=0 and username='" . mysqli_real_escape_string($mysqli, Auth::user()->email) . "';");
+    $results = mysqli_query($mysqli, "select * from filesdata where isDeleted=0 and username='" . mysqli_real_escape_string($mysqli, Auth::user()->email) . "';");
 
     while (($doc = mysqli_fetch_assoc($results)) != NULL) {
         $filename = $doc['filename'];
@@ -396,15 +396,15 @@ function simpleQ($mysqli, $q)
 
 function connect() {
     global $mysqli;
-    $config = new Config();
+
     global $date;
     if ($date == "") {
         $date = date("Y-m-d-H-i-s");
     }
-    $hostname = trim($config->hostname);
-    $username = trim($config->username);
-    $password = trim($config->password);
-    $dbname = trim($config->name);
+$hostname = env('DB_HOST', 'localhost');
+$username = env('DB_USER', 'manu');
+$password = env('DB_PASSWORD', '');
+$dbname = env('DB_NAME', 'notes');
 
 
     //conection:
@@ -432,7 +432,7 @@ function getRootForUser($user=NULL) {
         global $monutilisateur;
 
     }
-    $sql = "select id from bn2_filesdata where username like '" .
+    $sql = "select id from filesdata where username like '" .
         mysqli_real_escape_string($mysqli, $user)
         . "' and isRoot=1";
 
@@ -453,7 +453,7 @@ function getRootForUser($user=NULL) {
 function createRootForUser() {
     global $mysqli;
     connect();
-    $sql = "insert into bn2_filesdata (filename, folder_id, isDirectory) values ('Dossier racine', -1, TRUE)";
+    $sql = "insert into filesdata (filename, folder_id, isDirectory) values ('Dossier racine', -1, TRUE)";
     if (mysqli_query($mysqli, $sql)) {
         echo "Root file created";
     }
@@ -461,7 +461,7 @@ function createRootForUser() {
 
 function deleteDBDoc($dbdoc) {
     global $mysqli;
-    $sql = "update bn2_filesdata set isDeleted=1 where id=" . mysqli_real_escape_string($mysqli, $dbdoc) . " and username like '" . mysqli_real_escape_string($mysqli, Auth::user()->email) . "'";
+    $sql = "update filesdata set isDeleted=1 where id=" . mysqli_real_escape_string($mysqli, $dbdoc) . " and username like '" . mysqli_real_escape_string($mysqli, Auth::user()->email) . "'";
     return simpleQ($mysqli, $sql);
 }
 
@@ -526,7 +526,7 @@ function search($expresion, $user, $folderId = NULL)
 {
     global $mysqli;
     $terms = explode(' ', $expresion);
-    $sql = 'select * from bn2_filesdata where ';
+    $sql = 'select * from filesdata where ';
     $first = true;
     foreach ($terms as $term) {
         if (!$first) {
@@ -547,7 +547,7 @@ function search($expresion, $user, $folderId = NULL)
 function getSharedWithMe()
 {
     global $mysqli;
-    $sql = "select * from bn2_filesdata INNER JOIN bn2_share on bn2_filesdata.id=bn2_share.note_id where givee='".mysqli_real_escape_string($mysqli, Auth::user()->email)."' or type='PUBLIC'";
+    $sql = "select * from filesdata INNER JOIN share on filesdata.id=share.note_id where givee='".mysqli_real_escape_string($mysqli, Auth::user()->email)."' or type='PUBLIC'";
     //echo $sql;
     return simpleQ($mysqli, $sql);
 }
@@ -555,8 +555,8 @@ function getSharedWithMe()
 function getSharedFromMe()
 {
     global $mysqli;
-    $sql = "select * from bn2_filesdata inner join bn2_share  on bn2_share.note_id=bn2_filesdata.id".
-    " where bn2_filesdata.username='".mysqli_real_escape_string($mysqli, Auth::user()->email)." or type='PUBLIC'";
+    $sql = "select * from filesdata inner join share  on share.note_id=filesdata.id".
+    " where filesdata.username='".mysqli_real_escape_string($mysqli, Auth::user()->email)." or type='PUBLIC'";
     //echo $sql;
     return simpleQ($mysqli, $sql);
 }

@@ -8,5 +8,6 @@
 App::setLocale('fr');
 
 return array(
-    'fallback_locale' => 'en'
+    'fallback_locale' => 'en'
+	'cipher' => 'AES-128-CBC'
 );

@@ -48,17 +48,18 @@ Route::get('auth/checkregistered', [
             return view("auth/checkregistered");
         }]
 );
-/*
+
 Route::post('post_images', function () {
 	require_once("../app_tinymce_file_acceptor.php");
 });
-*/
+
 
 Route::get('auth/register', ["as" => "signup", "uses" =>
 	function() {
 		return view('auth/register');
 	}]);
-Route::post('auth/register', ['as' => 'register_submit', 'uses' => 'Auth\AuthController@postRegister']);
+
+Route::post('auth/register', ['as' => 'register_submit', 'uses' => 'Auth\AuthController@create']);
 
 Route::get('radio', ['middleware' => "auth", "uses" => function () {
 	return view('radio.index');
@@ -409,7 +410,7 @@ Route::get("file/download/{noteId}", [
 
 	}]);
 
-
+/*
 function printImgSelf($content, $filename)
 {
 	header('Content-type:image/' . getExtension($filename));
@@ -441,7 +442,7 @@ function audioSelf($content, $filename)
 
 //    echo $content;
 
-}
+}*/
 
 Route::get("note/save/txt/{noteId}", ['before' => 'csrf',
                                       "middleware" => "auth",

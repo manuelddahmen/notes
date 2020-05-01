@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('master')
 
 @section('content')
     <h2>Register</h2>
-    <form method="POST" action="{{ asset('auth/checkregistered') }}">
+    <form method="POST" action="{{ asset('auth/register') }}">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="name">Name:</label>

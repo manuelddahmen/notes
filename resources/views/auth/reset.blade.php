@@ -7,7 +7,7 @@
  */
 ?><!-- resources/views/auth/reset.blade.php -->
 
-<form method="POST" action="/password/reset">
+<form method="POST" action="{{ asset('auth/reset') }}">
     {!! csrf_field() !!}
     <input type="hidden" name="token" value="{{ $token }}">
 

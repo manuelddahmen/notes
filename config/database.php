@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'fetch' => PDO::FETCH_CLASS,
+'fetch' => PDO::FETCH_CLASS,
 
     /*
     |--------------------------------------------------------------------------
@@ -21,7 +21,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Here you may specify which of the database connections below you wish
-    | to use as your default connection for all database work. Of course
+    | to use as your default connection for all database work. Of course
     | you may use many connections at once using the Database library.
     |
     */
@@ -38,7 +38,7 @@ return [
     | supported by Laravel is shown below to make development simple.
     |
     |
-    | All database work in Laravel is done through the PHP PDO facilities
+    | All database work in Laravel is done through the PHP PDO facilities
     | so make sure you have the driver for your particular database of
     | choice installed on your machine before you begin development.
     |
@@ -48,37 +48,37 @@ return [
 
         'sqlite' => [
             'driver'   => 'sqlite',
-            'database' => storage_path('database.sqlite'),
+//'database' => storage_path('database.sqlite'),
             'prefix'   => '',
         ],
 
         'mysql' => [
-	        'driver'    => 'mysql',
-	        'host' => env('DB_HOST', 'localhost'),
-	        'database' => env('DB_DATABASE', 'note'),
-	        'username' => env('DB_USERNAME', 'manu'),
-	        'password' => env('DB_PASSWORD', 'manu'),
-	        'charset'   => 'utf8',
-	        'collation' => 'utf8_unicode_ci',
-	        'prefix'    => 'bn2_',
-	        'strict'    => false,
+            'driver'    => 'mysql',
+'host' => env('DB_HOST', 'localhost'),
+'database' => env('DB_DATABASE', 'notes'),
+'username' => env('DB_USERNAME', 'manu'),
+'password' => env('DB_PASSWORD', ''),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+'prefix' => '',
+            'strict'    => false,
         ],
-        'wordpress' => [
-	        'driver'    => 'mysql',
-	        'host' => env('DB_HOST', 'localhost'),
-	        'database' => env('DB_DATABASE', 'note'),
-	        'username' => env('DB_USERNAME', 'manu'),
-	        'password' => env('DB_PASSWORD', 'manu'),
-	        'charset'   => 'utf8',
-	        'collation' => 'utf8_unicode_ci',
-	        'prefix'    => 'www1_',
-	        'strict'    => false,
+'wordpress' => [
+'driver'=> 'mysql',
+'host' => env('DB_HOST', 'localhost'),
+'database' => env('DB_DATABASE', 'wp'),
+'username' => env('DB_USERNAME', 'manu'),
+'password' => env('DB_PASSWORD', ''),
+            'charset'   => 'utf8',
+'collation' => 'utf8_unicode_ci',
+'prefix' => '',
+            'strict'    => false,
         ],
 
         'pgsql' => [
             'driver'   => 'pgsql',
-            'host'     => env('DB_HOST', 'localhost'),
-            'database' => env('DB_DATABASE', 'forge'),
+'host' => env('DB_HOST', 'localhost'),
+'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
             'password' => env('DB_PASSWORD', ''),
             'charset'  => 'utf8',
@@ -87,11 +87,11 @@ return [
         ],
 
         'sqlsrv' => [
-            'driver'   => 'sqlsrv',
-            'host'     => env('DB_HOST', 'localhost'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+'driver' => 'sqlsrv',
+'host' => env('DB_HOST', 'localhost'),
+'database' => env('DB_DATABASE', 'forge'),
+'username' => env('DB_USERNAME', 'forge'),
+'password' => env('DB_PASSWORD', ''),
             'charset'  => 'utf8',
             'prefix'   => '',
         ],
@@ -103,7 +103,7 @@ return [
     | Migration Repository Table
     |--------------------------------------------------------------------------
     |
-    | This table keeps track of all the migrations that have already run for
+    | This table keeps track of all the migrations that have already run for
     | your application. Using this information, we can determine which of
     | the migrations on disk haven't actually been run in the database.
     |
@@ -130,8 +130,8 @@ return [
             'host'     => '127.0.0.1',
             'port'     => 6379,
             'database' => 0,
-        ],
+],
 
-    ],
+],
 
 ];

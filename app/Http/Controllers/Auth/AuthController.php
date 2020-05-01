@@ -111,16 +111,17 @@ class AuthController extends Controller
 
 			if(($user->username)!= NULL)
 			{
-				redirect('home');
+				redirect('auth/loggedin');
 			}
 		}
 
-		else
-		{
-			redirect('auth/checkregistered');
-		}
+		
+		
+			
+			return $login;
+		
 
-		return $login;
+		
 	}
     /**
      * Handle an authentication attempt.

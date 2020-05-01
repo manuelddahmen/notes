@@ -1,23 +1,24 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": [
-        "framework",
-        "laravel"
-    ],
-    "license": "MIT",
-    "type": "project",
-    "require": {
-        "php": ">=5.6.4",
-        "laravel/framework": "5.7.9",
-        "jgrossi/corcel": "2.7",
-        "symfony/http-foundation" : "4.2.12"
+	"name": "emptythree/crossfiles",
+ "description": "files viewer",
+"keywords": [
+"cloud",
+"file"
+   ],
+"license": "free",
+"type": "project",
+"require": {
+"php": ">=7.2",
+"laravel/framework": "6.0",
+
+"jgrossi/corcel": "*",
+"symfony/http-foundation" : ">=4.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~5.0",
-        "symfony/css-selector": "3.1.*",
+
+"symfony/css-selector": "3.1.*",
         "symfony/dom-crawler": "3.1.*"
     },
     "autoload": {
@@ -28,14 +29,14 @@
             "App\\": "app/"
         }
     },
-    "autoload-dev": {
-        "classmap": [
-            "tests/TestCase.php"
-        ]
-    },
-    "scripts": {
-        "post-create-project-cmd": [
-            "php artisan key:generate"
+
+
+ 
+
+
+"scripts": {
+"post-create-project-cmd": [
+"php artisan key:generate"
         ],
         "post-install-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
@@ -47,8 +48,19 @@
         ]
     },
     "config": {
-        "preferred-install": "dist"
+"preferred-install": "dist"
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+"minimum-stability": "dev",
+"prefer-stable": true
 }
+
+
+
+
+
+
+
+
+
+ 
+

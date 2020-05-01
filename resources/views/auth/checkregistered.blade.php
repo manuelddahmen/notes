@@ -1,7 +1,9 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Win
+ * User: manuel dahmen
  * Date: 02-12-18
  * Time: 13:51
  */
+echo 'check registration';
+connect();
