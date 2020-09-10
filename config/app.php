@@ -4,15 +4,16 @@ return [
     /**
      * Path to the 'app' folder
      */
-    'app.path' => "/customers/4/5/5/demoniakmachine.com/httpd.www/notes/app",// /customers/4/5/5/demoniakmachine.com/httpd.www/notes
+    'app.path' => "/home/cabox/workspace/notes/app",// /customers/4/5/5/demoniakmachine.com/httpd.www/notes
     /**
      * Path to the project's root folder
      */
-    'base_path' => '/customers/4/5/5/demoniakmachine.com/httpd.www/notes',// /customers/4/5/5/demoniakmachine.com/httpd.www/notes
+    'base_path' => 'home/cabox/workspace/notes/',
+//',// /customers/4/5/5/demoniakmachine.com/httpd.www/notes
     /**
      * Path to the 'public' folder
      */
-    'public_path' => '/customers/4/5/5/demoniakmachine.com/httpd.www/notes',// /customers/4/5/5/demoniakmachine.com/httpd.www/notes
+    'public_path' => 'home/cabox/workspace/notes/', //customers/4/5/5/demoniakmachine.com/httpd.www/notes
     /**
      * Path to the 'app/storage' folder
      */
