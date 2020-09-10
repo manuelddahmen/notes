@@ -19,7 +19,7 @@ return [
      */
     'storage_path' => '/home/cabox/workspace/notes/storage',// /customers/4/5/5/demoniakmachine.com/httpd.www/notes
 
-    'hostname' => 'Server-manueldahmen.codeany.com/notes/',// demoniakmachine.com
+    'hostname' => 'Server-manueldahmen.codeanyapp.com/notes/',// demoniakmachine.com
     'app.pathToRootDir' => 'home/cabox/workspace/notes/',//  /customers/4/5/5/demoniakmachine.com/httpd.www/notes
     /*
     |--------------------------------------------------------------------------
